@@ -1,10 +1,9 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: openapi-swagger 
+  name: openapi-swagger
 spec:
   replicas: 1
-  revisionHistoryLimit: 3
   selector:
     matchLabels:
       app: openapi-swagger
@@ -14,7 +13,7 @@ spec:
         app: openapi-swagger
     spec:
       containers:
-      - image: evilpuppet/openapi-swagger:latest
-        name: openapi-swagger
+      - name: openapi-swagger
+        image: evilpuppet/openapi-swagger:latest
         ports:
-        - containerPort: 8080
+        - containerPort: 8080  # Ensure this matches the Quarkus application
