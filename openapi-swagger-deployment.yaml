@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: openapi-swagger 
+spec:
+  replicas: 1
+  revisionHistoryLimit: 3
+  selector:
+    matchLabels:
+      app: openapi-swagger
+  template:
+    metadata:
+      labels:
+        app: openapi-swagger
+    spec:
+      containers:
+      - image: evilpuppet/openapi-swagger:latest
+        name: openapi-swagger
+        ports:
+        - containerPort: 90
