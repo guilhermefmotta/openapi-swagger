@@ -3,8 +3,10 @@ kind: Service
 metadata:
   name: openapi-swagger
 spec:
+  type: NodePort
   ports:
-  - port: 90
-    targetPort: 90
+  - port: 9000
+    targetPort: 8080
+    nodePort: 9000
   selector:
     app: openapi-swagger

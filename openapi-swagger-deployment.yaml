@@ -17,4 +17,4 @@ spec:
       - image: evilpuppet/openapi-swagger:latest
         name: openapi-swagger
         ports:
-        - containerPort: 90
+        - containerPort: 8080
